@@ -1,0 +1,19 @@
+# Neovim swap/backup files
+*.swp
+*.swo
+*.bak
+
+# Neovim plugin manager lock file
+lazy-lock.json
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
