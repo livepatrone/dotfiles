@@ -1,18 +1,19 @@
-# Neovim swap/backup files
+# Neovim
 *.swp
 *.swo
 *.bak
-
-# Neovim plugin manager lock file
 lazy-lock.json
 
-# Python cache
+# Local overrides (never public)
+**/*.local
+**/secrets.*
+**/*.secret
+
+# Python
 __pycache__/
 *.pyc
 
-# OS junk
+# OS junk / logs
 .DS_Store
 Thumbs.db
-
-# Logs
 *.log
