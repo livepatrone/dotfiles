@@ -1,23 +1,34 @@
----@type NvPluginSpec[]
-local plugins = {
+-- ~/dotfiles/nvim/lua/custom/plugins.lua
 
-  -- Telescope fuzzy finder
+local plugins = {
+  -- Telescope extras
   {
-    "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    cmd = "Telescope",
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make",
     config = function()
-      require("telescope").setup {
-        defaults = {
-          layout_strategy = "horizontal",
-          layout_config = { prompt_position = "top" },
-          sorting_strategy = "ascending",
-          winblend = 0,
-        },
-      }
+      require("telescope").load_extension("fzf")
     end,
   },
 
+  -- File explorer
+  { "nvim-tree/nvim-tree.lua", opts = {} },
+
+  -- Statusline icons
+  { "nvim-tree/nvim-web-devicons" },
+
+  -- Treesitter for better syntax
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
+
+  -- Git signs in gutter
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+    end,
+  },
 }
 
 return plugins
