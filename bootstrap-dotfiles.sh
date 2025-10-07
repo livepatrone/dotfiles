@@ -7,7 +7,6 @@ TS="$(date +%Y%m%d-%H%M%S)"
 
 # Items under dotfiles/ that should be linked into ~/.config
 CONFIG_DIRS=(
-  "nvim"
   "alacritty"
   # add more here as you commit them:
   # "kitty"
