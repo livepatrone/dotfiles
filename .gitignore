@@ -1,8 +1,48 @@
+# ~/.dotfiles .gitignore
+# Target distro: Bazzite (Fedora 42)
+# Shell: Bash / Wayland / Hyprland
+
+#--- System / temp ---
+*~
+*.tmp
+.cache/
+.logs/
+
+# --- Desktop / Wayland / Hyprland ---
+hyprland.log
+waybar.log
+*.socket
+*.lock
+*.pid
+# --- Editor junk (VSCode, JetBrains) ---
+.vscode/
+.idea/
+
+# --- Machine-specific folders ---
+/.local/
+.env
+.envrc
+hardware-*
+tokens/
+/ssh/
+/gpg/
+id_rsa*
+id_ed25519*
 # Neovim
 *.swp
 *.swo
 *.bak
 lazy-lock.json
+
+#--- Neovim extra (packer/lazy.nvim/etc.) ---
+nvim-data/
+plugin/packer_compiled.lua
+shada/
+session.vim
+# --- Node / misc dev ---
+node_modules/
+dist/
+build/
 
 # Local overrides (never public)
 **/*.local
@@ -17,3 +57,4 @@ __pycache__/
 .DS_Store
 Thumbs.db
 *.log
+
