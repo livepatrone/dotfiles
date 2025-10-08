@@ -8,7 +8,6 @@ TS="$(date +%Y%m%d-%H%M%S)"
 # Dependencies for each configuration
 # Format: [config_name]="command_to_check:package_name:install_method"
 declare -A DEPENDENCIES=(
-  ["alacritty"]="alacritty:alacritty:rpm-ostree"
   ["nvim"]="nvim:neovim:rpm-ostree"
   ["git"]="git:git:rpm-ostree"
   ["warp-terminal"]="warp-terminal:warp-terminal:manual"
@@ -103,7 +102,6 @@ check_dependencies() {
 
 # Items under dotfiles/ that should be linked into ~/.config
 CONFIG_DIRS=(
-  "alacritty"
   "nvim"
 )
 

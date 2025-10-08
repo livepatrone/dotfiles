@@ -1,7 +1,7 @@
 {
   "prefs": {
     "WelcomeTipsFeaturesUsed": "[{\"Hint\":\"BlockSelect\"},{\"Hint\":\"CreateBlock\"},{\"Hint\":\"BlockAction\"}]",
-    "EnteredAgentModeNumTimes": "14",
+    "EnteredAgentModeNumTimes": "17",
     "AIRequestQuotaInfoSetting": "{\"cycle_history\":[{\"end_date\":\"2025-11-04T16:09:35.337508Z\",\"was_quota_exceeded\":false,\"banner_state\":{\"dismissed\":false}}]}",
     "CrashReportingEnabled": "true",
     "MCPExecutionPath": "\"/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/livepepino/.local/bin:/home/livepepino/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin\"",
@@ -17,7 +17,7 @@
     "DismissedCodeToolbeltNewFeaturePopup": "true",
     "HasInitializedDefaultSecretRegexes": "true",
     "DidShowCodeLaunchModal": "true",
-    "AIRequestLimitInfo": "{\"limit\":75,\"num_requests_used_since_refresh\":38,\"next_refresh_time\":\"2025-11-04T16:09:35.337508Z\",\"is_unlimited\":false,\"request_limit_refresh_duration\":\"Monthly\",\"accepted_autosuggestions_limit\":999999,\"is_unlimited_autosuggestions\":true,\"accepted_autosuggestions_since_last_refresh\":0,\"is_unlimited_voice\":false,\"voice_request_limit\":10000,\"voice_token_limit\":30000,\"voice_requests_used_since_last_refresh\":0,\"voice_tokens_used_since_last_refresh\":0,\"is_unlimited_codebase_indices\":false,\"max_codebase_indices\":3,\"max_files_per_repo\":5000,\"embedding_generation_batch_size\":100}",
+    "AIRequestLimitInfo": "{\"limit\":75,\"num_requests_used_since_refresh\":59,\"next_refresh_time\":\"2025-11-04T16:09:35.337508Z\",\"is_unlimited\":false,\"request_limit_refresh_duration\":\"Monthly\",\"accepted_autosuggestions_limit\":999999,\"is_unlimited_autosuggestions\":true,\"accepted_autosuggestions_since_last_refresh\":0,\"is_unlimited_voice\":false,\"voice_request_limit\":10000,\"voice_token_limit\":30000,\"voice_requests_used_since_last_refresh\":0,\"voice_tokens_used_since_last_refresh\":0,\"is_unlimited_codebase_indices\":false,\"max_codebase_indices\":3,\"max_files_per_repo\":5000,\"embedding_generation_batch_size\":100}",
     "TelemetryEnabled": "true",
     "ReceivedReferralTheme": "\"Inactive\""
   }

@@ -6,7 +6,6 @@ Personal configuration files for my development environment on Bazzite Linux.
 
 - **Bash**: Custom `.bashrc` with useful aliases and settings
 - **Git**: Global git configuration with user settings and ignore patterns
-- **Alacritty**: Terminal emulator configuration with TokyoNight theme
 - **Neovim**: Full NvChad-based configuration with LSP setup
 - **Warp Terminal**: Modern terminal preferences and settings
 
@@ -17,7 +16,7 @@ Personal configuration files for my development environment on Bazzite Linux.
 - Git
 - Bash
 - Neovim (for nvim config)
-- Alacritty (for terminal config)
+- Warp Terminal (for terminal config)
 - JetBrains Mono Nerd Font (for proper icons)
 
 ### Installation
@@ -43,7 +42,6 @@ Personal configuration files for my development environment on Bazzite Linux.
 
 ```
 .
-├── alacritty/          # Alacritty terminal configuration
 ├── nvim/              # Neovim configuration (NvChad based)
 ├── warp-terminal/     # Warp terminal preferences
 ├── bashrc             # Bash configuration
@@ -68,11 +66,6 @@ ln -sf ~/dotfiles/gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/gitignore_global ~/.gitignore_global
 ```
 
-### Alacritty
-```bash
-mkdir -p ~/.config/alacritty
-ln -sf ~/dotfiles/alacritty ~/.config/alacritty
-```
 
 ### Neovim
 ```bash
@@ -89,22 +82,17 @@ ln -sf ~/dotfiles/warp-terminal/user_preferences.json ~/.config/warp-terminal/us
 
 The install scripts automatically check for required applications and provide installation commands for missing dependencies:
 
-- **rpm-ostree packages**: Alacritty, Neovim, Git, Fastfetch
+- **rpm-ostree packages**: Neovim, Git, Fastfetch
 - **Manual installation**: Warp Terminal (from warp.dev)
 
 If dependencies are missing, you'll see helpful commands like:
 ```bash
-sudo rpm-ostree install alacritty neovim
+sudo rpm-ostree install neovim
 # Warp Terminal: Download from https://www.warp.dev/
 ```
 
 ## 🎨 Features
 
-### Alacritty Terminal
-- **Theme**: TokyoNight color scheme
-- **Font**: JetBrains Mono Nerd Font
-- **Opacity**: 95% for subtle transparency
-- **Key bindings**: Standard copy/paste and font size controls
 
 ### Neovim
 - **Base**: NvChad configuration
