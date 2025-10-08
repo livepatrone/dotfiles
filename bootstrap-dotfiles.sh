@@ -8,17 +8,15 @@ TS="$(date +%Y%m%d-%H%M%S)"
 # Items under dotfiles/ that should be linked into ~/.config
 CONFIG_DIRS=(
   "alacritty"
-  # add more here as you commit them:
-  # "kitty"
-  # "tmux"
-  # "wezterm"
+  "nvim"
 )
 
 # Files that live in $HOME (not under ~/.config) if you keep any in the repo root.
 # Example: if you add a `bashrc` file to your repo root and want it as ~/.bashrc:
 HOME_FILES=(
-  # "bashrc:.bashrc"
-  # "gitconfig:.gitconfig"
+  "bashrc:.bashrc"
+  "gitconfig:.gitconfig"
+  "gitignore_global:.gitignore_global"
 )
 
 backup() {
@@ -83,6 +81,20 @@ done
 for f in "${HOME_FILES[@]}"; do
   link_into_home "$f"
 done
+
+# Special case for Warp terminal user preferences
+WARP_SRC="${REPO}/warp-terminal/user_preferences.json"
+WARP_DST="${CFG}/warp-terminal/user_preferences.json"
+if [ -e "$WARP_SRC" ]; then
+  mkdir -p "${CFG}/warp-terminal"
+  if [ -e "$WARP_DST" ] || [ -L "$WARP_DST" ]; then
+    backup "$WARP_DST"
+  fi
+  ln -s "$WARP_SRC" "$WARP_DST"
+  echo "✅ Linked ${WARP_DST} -> ${WARP_SRC}"
+else
+  echo "⏭️  Skip: ${WARP_SRC} not found in repo"
+fi
 
 echo
 echo "All done! Re-run this script any time after adding new items to your repo."
