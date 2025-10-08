@@ -11,7 +11,7 @@ declare -A DEPENDENCIES=(
   ["alacritty"]="alacritty:alacritty:rpm-ostree"
   ["nvim"]="nvim:neovim:rpm-ostree"
   ["git"]="git:git:rpm-ostree"
-  ["warp-terminal"]="warp:warp-terminal:manual"
+  ["warp-terminal"]="warp-terminal:warp-terminal:manual"
   ["fastfetch"]="fastfetch:fastfetch:rpm-ostree"
 )
 
