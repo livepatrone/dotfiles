@@ -103,6 +103,9 @@ check_dependencies() {
 # Items under dotfiles/ that should be linked into ~/.config
 CONFIG_DIRS=(
   "nvim"
+  "gtk-3.0"
+  "gtk-4.0"
+  "fontconfig"
 )
 
 # Files that live in $HOME (not under ~/.config) if you keep any in the repo root.
@@ -111,6 +114,7 @@ HOME_FILES=(
   "bashrc:.bashrc"
   "gitconfig:.gitconfig"
   "gitignore_global:.gitignore_global"
+  "aliases.sh:.aliases"
 )
 
 backup() {
@@ -163,6 +167,45 @@ link_into_home() {
   echo "✅ Linked ${dst} -> ${src}"
 }
 
+setup_device_specific() {
+  local hostname="$(hostname)"
+  local device_dir="${REPO}/device-configs/${hostname}"
+  
+  if [ -d "$device_dir" ]; then
+    echo "🖥️  Found device-specific configs for ${hostname}"
+    
+    # Source device-specific environment variables
+    if [ -f "${device_dir}/local.env" ]; then
+      echo "✅ Sourcing device-specific environment from ${device_dir}/local.env"
+      # Note: This creates a symlink that bash will source
+      ln -sf "${device_dir}/local.env" "${HOME}/.local.env"
+    fi
+    
+    # Link device-specific bashrc
+    if [ -f "${device_dir}/local.bashrc" ]; then
+      echo "✅ Linking device-specific bashrc from ${device_dir}/local.bashrc"
+      ln -sf "${device_dir}/local.bashrc" "${HOME}/.bashrc.device"
+    fi
+    
+    # Handle device-specific config overrides
+    for config_dir in "${device_dir}"/*/; do
+      if [ -d "$config_dir" ]; then
+        local config_name="$(basename "$config_dir")"
+        local target_dir="${CFG}/${config_name}"
+        
+        if [ -d "$target_dir" ]; then
+          echo "📁 Applying device-specific overrides for ${config_name}"
+          # Copy device-specific files over the symlinked configs
+          cp -r "${config_dir}"/* "${target_dir}/"
+        fi
+      fi
+    done
+  else
+    echo "ℹ️  No device-specific configs found for ${hostname} (${device_dir})"
+    echo "   Create ${device_dir}/ if you need device-specific settings"
+  fi
+}
+
 echo "=== Dotfiles bootstrap ==="
 echo "Repo: ${REPO}"
 echo "Config dir: ${CFG}"
@@ -192,6 +235,9 @@ if [ -e "$WARP_SRC" ]; then
 else
   echo "⏭️  Skip: ${WARP_SRC} not found in repo"
 fi
+
+# Setup device-specific configurations
+setup_device_specific
 
 echo
 echo "All done! Re-run this script any time after adding new items to your repo."

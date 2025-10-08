@@ -1,7 +1,7 @@
 [user]
 	name = juan.rios
 	email = livejuanrios@gmail.com
-	signingkey = /home/livepepino/.ssh/id_ed25519.pub
+	signingkey = /home/LivePepino/.ssh/id_ed25519.pub
 [core]
 	excludesfile = /home/livepepino/.gitignore_global
 [gpg]

@@ -24,4 +24,13 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 fastfetch
+
+# Source local configurations (machine-specific)
 [ -f ~/.bashrc.local ] && source ~/.bashrc.local
+
+# Source device-specific configurations
+[ -f ~/.local.env ] && source ~/.local.env
+[ -f ~/.bashrc.device ] && source ~/.bashrc.device
+
+# Source aliases and functions
+[ -f ~/.aliases ] && source ~/.aliases
