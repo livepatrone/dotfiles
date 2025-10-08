@@ -1,4 +1,4 @@
-# .bashrc
+XX# .bashrc
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -24,3 +24,4 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 neofetch
+[ -f ~/.bashrc.local ] && source ~/.bashrc.local
