@@ -16,6 +16,7 @@ chmod +x bootstrap-dotfiles.sh bootstrap-nvim.sh
 
 # Run bootstrap scripts
 echo "📝 Setting up dotfiles..."
+echo "   (This will check for missing dependencies and guide you through installation)"
 ./bootstrap-dotfiles.sh
 
 echo "🚀 Setting up Neovim..."

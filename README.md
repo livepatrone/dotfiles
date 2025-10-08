@@ -28,7 +28,7 @@ Personal configuration files for my development environment on Bazzite Linux.
    cd ~/dotfiles
    ```
 
-2. Run the install script:
+2. Run the install script (it will check dependencies automatically):
    ```bash
    ./install.sh
    ```
@@ -83,6 +83,19 @@ ln -sf ~/dotfiles/nvim ~/.config/nvim
 ```bash
 mkdir -p ~/.config/warp-terminal
 ln -sf ~/dotfiles/warp-terminal/user_preferences.json ~/.config/warp-terminal/user_preferences.json
+```
+
+## 🔍 Dependency Checking
+
+The install scripts automatically check for required applications and provide installation commands for missing dependencies:
+
+- **rpm-ostree packages**: Alacritty, Neovim, Git, Fastfetch
+- **Manual installation**: Warp Terminal (from warp.dev)
+
+If dependencies are missing, you'll see helpful commands like:
+```bash
+sudo rpm-ostree install alacritty neovim
+# Warp Terminal: Download from https://www.warp.dev/
 ```
 
 ## 🎨 Features
